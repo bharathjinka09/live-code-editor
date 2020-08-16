@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Live Code Editor</title>
+	<meta charset="UTF-8">
+	  <meta name="description" content="Code Editor">
+	  <meta name="keywords" content="HTML, CSS, JavaScript">
+	  <meta name="author" content="Bharath">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h2 class="text-center mt-2">Live Code Editor</h2>
+
+		<div class="editor">
+			<textarea rows="5" class="form-control mb-2" placeholder="HTML Code" id="html-code"></textarea>
+			<textarea rows="5" class="form-control mb-2" placeholder="CSS Code" id="css-code"></textarea>
+			<textarea rows="5" class="form-control mb-2" placeholder="JS Code" id="js-code"></textarea>
+			
+			<h2 class="text-center">Output</h2>
+
+			<iframe class="form-control mb-2" id="output"></iframe>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function run() {
+			let htmlCode = document.querySelector(".editor #html-code").value;
+			let cssCode = "<style>"+document.querySelector(".editor #css-code").value+"</style>";
+			let jsCode = document.querySelector(".editor #js-code").value;
+			let output = document.querySelector(".editor #output");
+			//console.log(htmlCode,cssCode,jsCode,output);
+			output.contentDocument.body.innerHTML = htmlCode+cssCode;
+			output.contentWindow.eval(jsCode);
+		}
+		document.querySelector(".editor #html-code").addEventListener("keyup",run);
+		document.querySelector(".editor #css-code").addEventListener("keyup",run);
+		document.querySelector(".editor #js-code").addEventListener("keyup",run);
+	</script>
+</body>
+</html>

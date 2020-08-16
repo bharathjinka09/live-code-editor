@@ -9,18 +9,24 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
+<body style="background: aliceblue">
 	<div class="container">
 		<h2 class="text-center mt-2">Live Code Editor</h2>
 
 		<div class="editor">
-			<textarea rows="5" class="form-control mb-2" placeholder="HTML Code" id="html-code"></textarea>
-			<textarea rows="5" class="form-control mb-2" placeholder="CSS Code" id="css-code"></textarea>
-			<textarea rows="5" class="form-control mb-2" placeholder="JS Code" id="js-code"></textarea>
-			
-			<h2 class="text-center">Output</h2>
+			<div class="row">
+				<div class="col">
+					<textarea rows="5" class="form-control mb-2" placeholder="HTML Code" id="html-code"></textarea>
+					<textarea rows="5" class="form-control mb-2" placeholder="CSS Code" id="css-code"></textarea>
+					<textarea rows="5" class="form-control mb-2" placeholder="JS Code" id="js-code"></textarea>
+				</div>
+				<div class="col">
+					
+					<h2 class="text-center">Output</h2>
 
-			<iframe class="form-control mb-2" id="output"></iframe>
+					<iframe class="form-control mb-2" id="output"></iframe>
+				</div>
+			</div>
 		</div>
 	</div>
 
